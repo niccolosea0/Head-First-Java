@@ -20,7 +20,6 @@ This repository is **for learning purposes only**.
 
 ## Repository Structure
 
-* `book/` – Head First Java book (PDF)
 * `src/` – Java source code
 * `notes/` – Personal notes and summaries
 * `exercises/` – Book exercises and practice problems
@@ -41,3 +40,4 @@ This repository is **for learning purposes only**.
 * Java
 * Vim text editor
 * Git & GitHub
+
