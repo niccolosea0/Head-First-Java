@@ -29,7 +29,8 @@ class Echo {
  	public static void main(String[] args) {
  
  		Echo e1 = new Echo();
- 		Echo e2 = new Echo();
+ 		Echo e2 = new Echo(); // or below line for bonus question
+		//Echo e2 = e1; // for Bonus Question
  		int x = 0;
  
  		while (x < 4) {
@@ -37,11 +38,11 @@ class Echo {
  
  			e1.count = e1.count + 1; // 1. 0+1=1 | 2. 1+1=2 | 3. 2+1=3 | 4. 3+1=4; 
  
- 			if (x == 4) {
- 				e2.count = e2.count + 1; // This code never executes, because when x will be equal to 4, loop will end
+ 			if (x == 3) {
+ 				e2.count = e2.count + 1; // 1. - | 2. | 3. | 4. 5+1=6 
  			}
-			if (x < 4) {
- 				e2.count = e2.count + e1.count; // 1. 0+1=1 | 2. 1+2=3 | 3. 3+3=6 | 4. 6+4=10
+			if (x > 0) {
+ 				e2.count = e2.count + e1.count; // 1.- | 2. 0+2=2 | 3. 2+3=5 | 4. 6+4=10
  			}
  			x = x + 1;
  		}
@@ -51,31 +52,3 @@ class Echo {
  	}
  }
 
-// Bonus Question Solution
-/*
-  public class EchoTestDrive {
-	public static void main(String[] args) {
-
-		Echo e1 = new Echo();
-		Echo e2 = e1;
-		int x = 0;
-
-		while (x < 4) {
-			e1.hello();
-
-			e1.count = e1.count + 1; // 1. 0+1=1 | 2. 1+1=2 | 3. 4+1=5 | 4. 10+1 = 11
-
-			if (x == 3) {
-				e2.count = e2.count + 1; // 1.- | 2. - | 3. 11+1=12
-			}
-			if (x > 0) {
-				e2.count = e2.count + e1.count; // 1.- | 2. 2+2=4 | 3. 5+5=10 | 4. 12+12=24
-			}
-			x = x + 1;
-		}
-		
-		System.out.println(e2.count); // Prints last number
-
-	}
-}
-*/
