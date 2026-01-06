@@ -16,6 +16,13 @@ class Monster {
     }
     */
 
+    /* 2. This particular code works
+    boolean frighten(int x) {
+        System.out.println("arrrgh");
+        return true;
+    }
+    */
+
 }
 
 
@@ -27,6 +34,14 @@ class Vampire extends Monster {
         return false;
     }
     */
+
+    /* 2. But this one does not work, because we only changed returned type from boolean to int, we have to change argument also to fix this code.
+    int frighten(double x) {
+        System.out.println("a bite?");
+        return 1;
+    }
+    */
+
 }
 
 class Dragon extends Monster {
