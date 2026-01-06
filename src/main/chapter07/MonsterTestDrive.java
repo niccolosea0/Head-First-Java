@@ -30,6 +30,11 @@ class Monster {
     }
     */
    
+    // 4. This code compiles
+     boolean frighten(int z) {
+        System.out.println("arrrgh");
+        return true;
+    }
 
 }
 
@@ -57,6 +62,14 @@ class Vampire extends Monster {
         return true;
     }
     */
+
+    // 4. This code compiles, but it is overloaded method, because its argument type is changed from int to byte
+    // If we want to call this method in main we have to pass argument which will have type of byte not integer, so far
+    // we pass only integers, so this particular method will not be called in the main, but the one that subclass get's from super class
+    boolean frighten(byte b) {
+        System.out.println("a bite?");
+        return true;
+    }
 
 }
 
