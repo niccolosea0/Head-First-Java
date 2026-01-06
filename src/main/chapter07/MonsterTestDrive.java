@@ -9,36 +9,52 @@
 
 class Monster {
 
-    /* 1. This code works
+    /* 1. This code compiles
     boolean frighten(int d) {
         System.out.println("arrrgh");
         return true;
     }
     */
 
-    /* 2. This particular code works
+    /* 2. This particular code compiles
     boolean frighten(int x) {
         System.out.println("arrrgh");
         return true;
     }
     */
 
+    // 3. This code compiles
+   /* boolean frighten(int x) {
+        System.out.println("arrrgh");
+        return true;
+    }
+    */
+   
+
 }
 
 
 class Vampire extends Monster {
 
-    /* 1. This code works
+    /* 1. This code compiles
     boolean frighten(int x) {
         System.out.println("a bite?");
         return false;
     }
     */
 
-    /* 2. But this one does not work, because we only changed returned type from boolean to int, we have to change argument also to fix this code.
+    /* 2. But this one does not compile, because we only changed returned type from boolean to int, we have to change argument also to fix this code.
     int frighten(double x) {
         System.out.println("a bite?");
         return 1;
+    }
+    */
+    
+    // 3. This code compiles but is not printed, because this method is not called in main
+    /*
+    boolean scare(int x) {
+        System.out.println("a bite?");
+        return true;
     }
     */
 
