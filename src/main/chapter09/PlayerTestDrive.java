@@ -14,6 +14,7 @@ public class PlayerTestDrive {
         System.out.println(Player.playerCount);
         Player one = new Player("Player");
         System.out.println(Player.playerCount);
+
         Player two = new Player("Player 2");
         System.out.println(one.playerCount);
         System.out.println(two.playerCount);
