@@ -1,5 +1,6 @@
 import java.util.*;
 import java.util.stream.*;
+import java.util.stream.Collectors;
 
 public class PracticeStreams {
     public static void main(String[] args) {
@@ -25,8 +26,9 @@ public class PracticeStreams {
         System.out.println("\nlist: " + list);
         List<String> listStream = list.stream()
                                       .skip(3)
-                                      .collect(Collectors.toList());
+                                      .collect(Collectors.toUnmodifiableList());
         list.add("seven");
+        // listStream.add("new value"); // will not work, because we have UnmodifiableList
         System.out.println("List Stream: " + listStream);
         System.out.println("list: " + list);
      
