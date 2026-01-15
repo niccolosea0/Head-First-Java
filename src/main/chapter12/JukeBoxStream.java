@@ -86,11 +86,25 @@ public class JukeBoxStream {
 
 
         // Get genres 
-        List<String> genres = songs.stream()
+        Set<String> genres = songs.stream()
                                  .map(song -> song.getGenre()) // Song -> String
-                                 .distinct()
-                                 .collect(Collectors.toList());
+                                 .collect(Collectors.toSet());
 
         System.out.println("\nGenres:\n" + genres);
+
+        Optional<Song> result  = songs.stream()
+                                     .filter(song -> song.getYear() == 1995)
+                                     .findFirst();
+
+        System.out.println("\nFirst song in 1995: " + result);
+
+
+        long artistNum = songs.stream()
+                           .map(Song::getArtist)
+                           .distinct()
+                           .count();
+
+        System.out.println("\nDifferent artist's number = " + artistNum);
+
     }
 }
