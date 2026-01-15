@@ -2,8 +2,6 @@ import java.util.*;
 import java.util.stream.*;
 import java.util.stream.Collectors;
 
-
-
 class Songs {
     public List<Song> getSongs() {
         return List.of(
@@ -73,43 +71,26 @@ class Song {
     }
 }
 
-public class JukeBoxStreams {
+public class JukeBoxStream {
     public static void main(String[] args) {
 
         // getSongs and store it in a songs list
         List<Song> songs = new Songs().getSongs();
 
-        // Stream pipeline
+        // Get rock songs 
         List<Song> rockSongs = songs.stream()
                                     .filter(song -> song.getGenre().contains("Rock"))
                                     .collect(Collectors.toList());
 
-        // Songs by The Beatles
-        List<Song> beatlesSongs = songs.stream()
-                                       .filter(song -> song.getArtist().contains("Beatles"))
-                                       .collect(Collectors.toList());
+        System.out.println("Rock Songs:\n" + rockSongs);
 
-        // Songs that start with "H"
-        List<Song> startsWithH = songs.stream()
-                                      .filter(song -> song.getTitle().startsWith("H"))
-                                      .collect(Collectors.toList());
 
-        // Songs that came after 1995
-        List<Song> recentSongs = songs.stream()
-                                      .filter(song -> song.getYear() > 1995)
-                                      .collect(Collectors.toList());
-        
-        System.out.println("Rock Songs:\n");
-        System.out.println(rockSongs);
+        // Get genres 
+        List<String> genres = songs.stream()
+                                 .map(song -> song.getGenre()) // Song -> String
+                                 .distinct()
+                                 .collect(Collectors.toList());
 
-        System.out.println("\nThe Beatles:\n");
-        System.out.println(beatlesSongs);
-
-        System.out.println("\nStarts with H:\n");
-        System.out.println(startsWithH);
-        
-        System.out.println("\nRecent songs:\n");
-        System.out.println(recentSongs);
-
+        System.out.println("\nGenres:\n" + genres);
     }
 }
