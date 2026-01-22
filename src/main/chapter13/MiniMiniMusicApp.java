@@ -22,12 +22,12 @@ public class MiniMiniMusicApp {
 
 
             ShortMessage msg1 = new ShortMessage();
-            msg1.setMessage(NOTE_ON, 1, 44, 100);
-            MidiEvent noteOn = new MidiEvent(msg1, 1);
+            msg1.setMessage(144, 1, 102, 100);
+            MidiEvent noteOn = new MidiEvent(msg1, 3);
             track.add(noteOn);
 
             ShortMessage msg2 = new ShortMessage();
-            msg2.setMessage(NOTE_OFF, 1, 44, 100);
+            msg2.setMessage(128, 1, 44, 100);
             MidiEvent noteOff = new MidiEvent(msg2, 16);
             track.add(noteOff);
 
