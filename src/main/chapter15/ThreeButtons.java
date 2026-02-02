@@ -9,7 +9,12 @@ public class ThreeButtons {
 
     public void go() {
         JFrame frame = new JFrame();
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         JPanel panel = new JPanel();
+        
+        panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
+
+
         panel.setBackground(Color.darkGray);
 
         JButton button = new JButton("shock me");
