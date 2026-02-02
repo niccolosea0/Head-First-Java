@@ -19,10 +19,10 @@ public class TwoButtons {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         JButton labelButton = new JButton("Change Label");
-        labelButton.addActionListener(new LabelListener());
+        labelButton.addActionListener(event -> label.setText("Ouch!"));
 
         JButton colorButton = new JButton("Change Color");
-        colorButton.addActionListener(new ColorListener());
+        colorButton.addActionListener(event -> frame.repaint());
 
         label = new JLabel("I'm a label");
         MyDrawPanel drawPanel = new MyDrawPanel();
@@ -36,17 +36,6 @@ public class TwoButtons {
         frame.setVisible(true);
     }
 
-    class LabelListener implements ActionListener {
-        public void actionPerformed(ActionEvent e) {
-            label.setText("Ouch!");
-        }
-    }
-
-    class ColorListener implements ActionListener {
-        public void actionPerformed(ActionEvent e) {
-            frame.repaint();
-        }
-    }
 }
 
 class MyDrawPanel extends JPanel {
