@@ -1,0 +1,4 @@
+this file is created
+because of testing
+reading file in Java.
+:)
